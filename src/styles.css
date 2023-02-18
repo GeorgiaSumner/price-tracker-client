@@ -1,0 +1,27 @@
+.search-bar{
+    margin:2rem;
+    padding:0.75rem;
+    width: 30rem;
+    border-radius: 0.5rem;   
+}
+
+.card-container{
+    list-style-type: none;
+    border-style: solid;
+    padding:0.5rem;
+
+}
+
+
+.test{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+    margin:4rem;
+}
+.price-card-list-item{
+
+padding:0.75rem;
+
+
+
+}
