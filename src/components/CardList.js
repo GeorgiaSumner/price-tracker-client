@@ -1,20 +1,18 @@
 import React from "react";
-import "../styles.css"
-const CardList = ({prices,searchTerm}) => {
+import "../styles.css";
+const CardList = ({ prices }) => {
+  return (
+    <div className="test">
+      {prices.map((price, index) => (
+        <div className="card-container">
+          <div className="price-card-list-item">
+            {price.card}
+            {price.store} {price.price}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
 
-console.log(prices)
-    return(
-       <div className='test'>
-       {prices.map((price,index) => 
-      
-       <div className='card-container' >
-     <div className='price-card-list-item'> {price.card}{price.store} {price.price}</div> 
-
-    
-       </div> )}
-       </div>
-    )
-
-  };
-  
-  export default CardList;
+export default CardList;

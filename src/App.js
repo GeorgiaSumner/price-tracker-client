@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Search from "./components/SearchBar.js";
 import SubmitButton from "./components/SubmitButton.js";
@@ -8,13 +8,12 @@ function App() {
   const [searchTerm, setSearch] = useState("");
   const [prices, setPrices] = useState([]);
 
-
   return (
     <div>
       <Search setSearch={setSearch} />
-      <SubmitButton searchTerm={searchTerm} setPrices={setPrices} /> 
-       <CardList prices={prices} searchTerm={searchTerm} />
-<PriceTotals prices={prices}  />
+      <SubmitButton searchTerm={searchTerm} setPrices={setPrices} />
+      <CardList prices={prices} />
+      <PriceTotals prices={prices} />
     </div>
   );
 }
