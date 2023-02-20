@@ -7,7 +7,7 @@ const SubmitButton = ({ searchTerm, setPrices }) => {
     setButtonDisabled(true);
     setTimeout(() => {
       setButtonDisabled(false);
-    }, 5000);
+    }, 6000);
     await api.post("/cardSearch", { searchTerm }).then((res) => {
       const body = res.data;
       const repaired = jsonrepair(body);
