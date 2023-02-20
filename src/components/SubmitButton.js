@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import api from "../api.js";
 import { jsonrepair } from "jsonrepair";
 const SubmitButton = ({ searchTerm, setPrices }) => {
+  const [buttonDisabled, setButtonDisabled] = useState(false);
   const handleSubmission = async () => {
     await api.post("/cardSearch", { searchTerm }).then((res) => {
-      console.log(res);
+      setButtonDisabled(true);
+      setTimeout(() => {
+        setButtonDisabled(false);
+      }, 3000);
       const body = res.data;
       const repaired = jsonrepair(body);
 
@@ -20,7 +24,9 @@ const SubmitButton = ({ searchTerm, setPrices }) => {
 
   return (
     <div>
-      <button onClick={handleSubmission}>Submit</button>
+      <button onClick={handleSubmission} disabled={buttonDisabled}>
+        Submit
+      </button>
     </div>
   );
 };
