@@ -8,7 +8,7 @@ const SubmitButton = ({ searchTerm, setPrices }) => {
       setButtonDisabled(true);
       setTimeout(() => {
         setButtonDisabled(false);
-      }, 3000);
+      }, 5000);
       const body = res.data;
       const repaired = jsonrepair(body);
 
