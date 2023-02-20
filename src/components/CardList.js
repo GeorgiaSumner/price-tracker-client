@@ -2,7 +2,7 @@ import React from "react";
 import "../styles.css";
 const CardList = ({ prices }) => {
   return (
-    <div className="test">
+    <div className="card-grid">
       {prices.map((price, index) => (
         <div className="card-container">
           <div className="price-card-list-item">

@@ -9,9 +9,12 @@ function App() {
   const [prices, setPrices] = useState([]);
 
   return (
-    <div>
-      <Search setSearch={setSearch} />
-      <SubmitButton searchTerm={searchTerm} setPrices={setPrices} />
+    <div className="app-container">
+      <div className="search-components">
+        <Search setSearch={setSearch} />
+        <SubmitButton searchTerm={searchTerm} setPrices={setPrices} />
+      </div>
+
       <CardList prices={prices} />
       <PriceTotals prices={prices} />
     </div>
