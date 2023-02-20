@@ -4,11 +4,11 @@ import { jsonrepair } from "jsonrepair";
 const SubmitButton = ({ searchTerm, setPrices }) => {
   const [buttonDisabled, setButtonDisabled] = useState(false);
   const handleSubmission = async () => {
+    setButtonDisabled(true);
+    setTimeout(() => {
+      setButtonDisabled(false);
+    }, 5000);
     await api.post("/cardSearch", { searchTerm }).then((res) => {
-      setButtonDisabled(true);
-      setTimeout(() => {
-        setButtonDisabled(false);
-      }, 5000);
       const body = res.data;
       const repaired = jsonrepair(body);
 
