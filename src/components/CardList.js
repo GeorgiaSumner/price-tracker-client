@@ -1,13 +1,23 @@
 import React from "react";
 import "../styles.css";
 const CardList = ({ prices }) => {
+  console.log(prices);
   return (
     <div className="card-grid">
       {prices.map((price, index) => (
         <div className="card-container">
-          <div className="price-card-list-item">
-            {price.card}
-            {price.store} {price.price}
+          <div>
+            <li className="card-name">{price.card}</li>
+            <li>{price.store} </li>
+            <li
+              className={
+                Math.min(price.price)
+                  ? "price-card-list-item lowest-price"
+                  : "price-card-list-item"
+              }
+            >
+              {price.price}
+            </li>
           </div>
         </div>
       ))}
