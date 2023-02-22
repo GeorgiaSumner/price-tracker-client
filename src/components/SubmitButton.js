@@ -9,17 +9,16 @@ const SubmitButton = ({ searchTerm, setPrices }) => {
     setButtonDisabled(true);
 
     await api.post("/cardSearch", { searchTerm }).then((res) => {
-      setTimeout(() => {
-        setIsSearching(false);
-        setButtonDisabled(false);
-      }, 6500);
+      setIsSearching(false);
+      setButtonDisabled(false);
       const body = res.data;
+      console.log(body);
       const repaired = jsonrepair(body);
 
       const parsed = JSON.parse(repaired);
       for (let i = 0; i < parsed.length; i++) {
         if (parsed[i].price == 999999) {
-          parsed[i].price = 0;
+          parsed[i].price = "Out of Stock";
         }
       }
       setPrices((prices) => [...prices, { card: searchTerm }, ...parsed]);

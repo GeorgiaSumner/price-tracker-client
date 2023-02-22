@@ -6,6 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(49, 49, 60);
+  background-image: url("./assets/nebulaBackground.jpg");
+
+  background-size: 150vw;
 }
 
 code {

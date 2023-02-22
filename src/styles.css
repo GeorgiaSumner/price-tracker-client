@@ -26,6 +26,8 @@
 }
 .loading-icon {
   width: 4rem;
+  float: right;
+  margin-top: -1rem;
 }
 
 .app-container {
@@ -47,4 +49,8 @@
 
 .card-name {
   font-weight: bold;
+}
+
+.total-list {
+  background-color: aliceblue;
 }

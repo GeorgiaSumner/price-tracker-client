@@ -1,11 +1,10 @@
 import React from "react";
 import "../styles.css";
 const CardList = ({ prices }) => {
-  console.log(prices);
   return (
     <div className="card-grid">
       {prices.map((price, index) => (
-        <div className="card-container">
+        <div key={index} className="card-container">
           <div>
             <li className="card-name">{price.card}</li>
             <li>{price.store} </li>
